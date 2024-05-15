@@ -21,6 +21,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
+
 public class Funcionarios{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +31,13 @@ public class Funcionarios{
     private Cargo cargo;
     private double salario;
     private LocalDate data;
+
+    
+    public Funcionarios(DadosCadastroFuncionario dados) {
+        this.nome = dados.nome();
+        this.cargo = dados.cargo();
+        this.salario = dados.salario();
+        this.data = dados.data();
 }
+}
+
