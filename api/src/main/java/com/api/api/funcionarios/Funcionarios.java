@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -39,5 +40,21 @@ public class Funcionarios{
         this.salario = dados.salario();
         this.data = dados.data();
 }
+    public void atualizarInformacoes(@Valid DadosAtualizarFuncionario dados){
+        if(dados.nome() != null){
+            this.nome = dados.nome();
+        }
+        if(dados.cargo() != null){
+            this.cargo = dados.cargo();
+        }
+        if (dados.salario() > 0) {
+            this.salario = dados.salario();
+        }
+        if(dados.data() != null){
+            this.data = dados.data();
+        }
+        
+
+    }
 }
 

@@ -1,0 +1,7 @@
+CREATE TABLE Funcionarios (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    cargo VARCHAR(50) NOT NULL,
+    salario DECIMAL(10, 2) NOT NULL,
+    data DATE NOT NULL
+);
